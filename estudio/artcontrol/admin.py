@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Estudio
+from .models import estudio
 
-admin.site.register(Estudio)
+admin.site.register(estudio)
