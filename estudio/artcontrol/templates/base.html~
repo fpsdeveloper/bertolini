@@ -23,7 +23,7 @@
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
 
                 <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
-                    <a href="{% url 'casos' %}" class="pure-menu-link">Listado Actual</a>
+                    <a href="/casos" class="pure-menu-link">Casos</a>
                 </li>
 
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
