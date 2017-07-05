@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+	<form action="/artcontrol/caso/" method="post" class="pure-form pure-form-stacked">
+		{% csrf_token %}
+		<fieldset>
+			{{formulario}}
+			<button type="submit" class="fondo-boton pure-button">Enviar</button>
+		</fieldset>
+	</form>
+	<script>
+		$(document).ready(function(){
+			var subtitulo = "Edici\u00F3n de Caso";
+			$("#subtitulo").text(subtitulo);
+		});
+	</script>
+{% endblock %}

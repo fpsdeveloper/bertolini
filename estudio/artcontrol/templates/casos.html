@@ -1,9 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	{%if casos %}
-		<p>hay casos</p>
-	{% else %}
-		<p>No hay casos</p>
-	{% endif %}	
+	<table id="tablaCasos" class="pure-table pure-table-bordered">
+		<thead>
+			<tr>
+				<th>f</th>
+				<th>Numero</th>
+				<th>Descripción</th>
+				<th>jd</th>
+				<th>Tribunal</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for caso in casos %}
+			<tr class= {% if forloop.counter0|divisibleby:2 %}pure-table-odd{%endif%}>
+					<td> {{ caso.f }} </td>
+					<td> {{ caso.numero }} </td>
+					<td> {{ caso.descripcion }} </td>
+					<td> {{ caso.jd }} </td>
+					<td> {{ caso.tribunal.nombre }} </td>
+				</tr>	
+			{% endfor %}
+		</tbody>
+	</table>
+	<script>
+	$(document).ready(function(){
+	 var urlCaso = "/artcontrol/caso";
+	 var subtitulo = "Listado de casos";
+	 $("#subtitulo").text(subtitulo);
+
+
+   	 $("#tablaCasos tbody tr").on('click',function(){
+	 var texto = $(this).find("td").eq(1).text();	 
+	 console.log(urlCaso + "?numero=" + $.trim(texto));
+	 window.location = urlCaso + "?numero=" + $.trim(texto);
+    });
+
+});
+	</script>
 {% endblock %}

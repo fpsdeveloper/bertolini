@@ -4,11 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ART Control</title>
-<link rel="stylesheet" href="/static/estudio.css">
- <link rel="stylesheet" href="/static/side-menu.css">
+{% load staticfiles %}
 <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css">
+<link rel="stylesheet" href="{% static 'artcontrol.css' %}">
+<link rel="stylesheet" href="{% static 'side-menu.css' %}">
+<script src="{% static 'static_jquery/js/jquery.js' %}"></script>
 </head>
 <body>
+
 <div id="layout">
     <!-- Menu toggle -->
     <a href="#menu" id="menuLink" class="menu-link">
@@ -22,9 +25,7 @@
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
 
-                <li class="pure-menu-item" class="menu-item-divided pure-menu-selected">
-                    <a href="{% url 'casos' %}" class="pure-menu-link">Listado Actual</a>
-                </li>
+		<li class="pure-menu-item"><a href="{% url 'casos' %}" class="pure-menu-link">Listado Actual</a></li>
 
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
             </ul>
@@ -33,7 +34,7 @@
     <div id="main">
         <div class="header">
             <h1>Art Control</h1>
-            <h2>Administra Litigios de ART</h2>
+            <h2 id="subtitulo">Administra Litigios de ART</h2>
         </div>
 		<div class="content">
 		  {% block content %}
@@ -41,6 +42,5 @@
 		</div> 
 	</div>	
 </div>
-<script src="/static/ui.js"></script>
 </body>
 </html>

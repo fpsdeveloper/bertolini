@@ -42,4 +42,4 @@ class caso(models.Model):
     expediente=models.CharField(max_length=100,null=False,blank=False)
 
     def __unicode__(self):
-        return self.numero
+        return str(self.numero)
