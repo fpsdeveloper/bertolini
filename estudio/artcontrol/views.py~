@@ -29,7 +29,7 @@ def casoFormulario(request):
             c.expediente = datos['expediente']
             c.f = datos['f']
             c.jd = datos['jd']
-            c.tribunal = datos['tribunal']
+            
             c.save()
 
             return HttpResponseRedirect("/artcontrol/casos")
